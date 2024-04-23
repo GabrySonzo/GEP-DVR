@@ -1,0 +1,98 @@
+/* Reset CSS per reimpostare i margini e i padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Stile per il body */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    padding: 20px;
+}
+
+/* Stile per l'intestazione h1 */
+h1 {
+    font-size: 28px;
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Stile per sottointestazione h2 */
+h2 {
+    font-size: 24px;
+    color: #666;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+/* Stile per il form */
+form {
+    margin-bottom: 30px;
+}
+
+/* Stile per la tabella */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid #ddd;
+}
+
+/* Stile per le celle dell'intestazione della tabella */
+th {
+    background-color: #f2f2f2;
+    border: 1px solid #ddd;
+    padding: 10px;
+}
+
+/* Stile per le celle della tabella */
+td {
+    border: 1px solid #ddd;
+    padding: 10px;
+}
+
+/* Stile per i radio button */
+input[type="radio"] {
+    margin-right: 5px;
+}
+
+/* Stile per i select */
+select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: #fff;
+    margin-bottom: 10px;
+}
+
+/* Stile per i pulsanti */
+input[type="button"] {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+input[type="button"]:hover {
+    background-color: #0056b3;
+}
+
+/* Stile per il risultato */
+#risultato {
+    font-size: 18px;
+    color: #333;
+    margin-top: 20px;
+    text-align: center;
+}
+
+/* Stile per il footer */
+footer {
+    text-align: center;
+    margin-top: 20px;
+    color: #666;
+}
+
