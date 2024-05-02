@@ -18,15 +18,15 @@
             <tr>
                 <td><label for="eta">Età</label></td>
                 <td>
-                    <input type="radio" name="eta" id="eta" value="0" checked> >18
-                    <input type="radio" name="eta" id="eta" value="1"> 15-18
+                    <input type="radio" name="eta" value="0" data-text=">18" checked> >18
+                    <input type="radio" name="eta" value="1" data-text="15-18"> 15-18
                 </td>
             </tr>
             <tr>
                 <td><label for="sesso">Sesso</label></td>
                 <td>
-                    <input type="radio" name="sesso" value="0" checked> Maschio
-                    <input type="radio" name="sesso" value="1"> Femmina
+                    <input type="radio" name="sesso" value="0" data-text="Maschio" checked> Maschio
+                    <input type="radio" name="sesso" value="1" data-text="Femmina"> Femmina
                 </td>
             </tr>
             <tr>
@@ -90,8 +90,8 @@
             <tr>
                 <td><label for="presa">Giudizio della presa sul carico</label></td>
                 <td>
-                    <input type="radio" name="presa" value="0" checked> Buono
-                    <input type="radio" name="presa" value="1"> Scarso
+                    <input type="radio" name="presa" id="Buono" value="0" data-text="Buono" checked> Buono
+                    <input type="radio" name="presa" id="Scarso" value="1" data-text="Scarso"> Scarso
                 </td>
             </tr>
             <tr>
@@ -111,9 +111,9 @@
             <tr>
                 <td><label for="durata">Durata</label></td>
                 <td>
-                    <input type="radio" name="durata" value="0" checked> CONTINUO ( 1ora )
-                    <input type="radio" name="durata" value="1"> CONTINUO ( 1-2 ore)
-                    <input type="radio" name="durata" value="1"> CONTINUO ( 2-8 ore)
+                    <input type="radio" name="durata" value="0" data-text="CONTINUO ( 1ora )" checked> CONTINUO ( 1ora )
+                    <input type="radio" name="durata" value="1" data-text="CONTINUO ( 1-2 ore)"> CONTINUO ( 1-2 ore)
+                    <input type="radio" name="durata" value="2" data-text="CONTINUO ( 2-8 ore)"> CONTINUO ( 2-8 ore)
                 </td>
             </tr>
             <tr>
@@ -129,6 +129,6 @@
     <h2>Risultato</h2>
     <p id="risultato"></p>
     
-    <button type="button" value="pdf" onclick="createPdf()">Crea PDF</button>
+    <button type="button" value="pdf" onclick="createPdf()" disabled="true" id="pdf">Crea PDF</button>
 </body>
 </html>
