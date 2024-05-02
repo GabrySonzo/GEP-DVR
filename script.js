@@ -1,3 +1,5 @@
+import { jsPDF } from "jspdf";
+
 var costanti = [[30,20],[20,15]];
 var altezze = [0.78, 0.85, 0.93, 1.00, 0.93, 0.85, 0.78, 0.00];
 var dislocazioni = [1.00, 0.97, 0.93, 0.91, 0.88, 0.87, 0.85, 0.00];
@@ -25,4 +27,29 @@ function calcola(){
     var limite = costante * altezza * dislocazione * distanza * angolo * presa * relazione;
     var risultato = peso/limite;
     document.getElementById("risultato").innerHTML = risultato;
+}
+
+function createPdf() {
+    
+    var doc = new jsPDF();
+    doc.text(20, 20, 'Dati del form:');
+    
+    // Recupera tutti i dati dal form
+    var formData = new FormData(document.querySelector('form'));
+    var data = {};
+    for (var [key, value] of formData.entries()) {
+        data[key] = value;
+    }
+    
+    // Aggiungi i dati al PDF
+    var yPos = 30;
+    for (var key in data) {
+        if (data.hasOwnProperty(key)) {
+            doc.text(20, yPos, key + ': ' + data[key]);
+            yPos += 10;
+        }
+    }
+    
+    // Salva il PDF
+    doc.save('risultato.pdf');
 }
