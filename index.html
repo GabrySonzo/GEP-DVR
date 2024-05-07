@@ -12,21 +12,39 @@
     <form>
         <table border="1">
             <tr>
-                <th>Voce</th>
-                <th>Dato</th>
+                <th>VOCE</th>
+                <th>DATO</th>
+            </tr>
+            <tr>
+                <td><label for="ragione_sociale">Ragione sociale dell'azienda</label></td>
+                <td>
+                    <input type="text" name="ragione_sociale" id="ragione_sociale">
+                </td>
             </tr>
             <tr>
                 <td><label for="eta">Età</label></td>
                 <td>
-                    <input type="radio" name="eta" value="0" data-text=">18" checked> >18
-                    <input type="radio" name="eta" value="1" data-text="15-18"> 15-18
+                    <div>
+                        <input type="radio" name="eta" value="0" data-text=">18" id="18" checked>
+                        <label for="18">>18</label>
+                    </div>
+                    <div>
+                        <input type="radio" name="eta" value="1" data-text="15-18" id="15-18">
+                        <label for="15-18">15-18</label>
+                    </div>
                 </td>
             </tr>
             <tr>
                 <td><label for="sesso">Sesso</label></td>
                 <td>
-                    <input type="radio" name="sesso" value="0" data-text="Maschio" checked> Maschio
-                    <input type="radio" name="sesso" value="1" data-text="Femmina"> Femmina
+                    <div>
+                        <input type="radio" name="sesso" value="0" data-text="maschio" id="maschio" checked>
+                        <label for="maschio">Maschio</label>
+                    </div>
+                    <div>
+                        <input type="radio" name="sesso" value="1" data-text="femmina" id="femmina">
+                        <label for="femmina">Femmina</label>
+                    </div>
                 </td>
             </tr>
             <tr>
@@ -90,8 +108,14 @@
             <tr>
                 <td><label for="presa">Giudizio della presa sul carico</label></td>
                 <td>
-                    <input type="radio" name="presa" id="Buono" value="0" data-text="Buono" checked> Buono
-                    <input type="radio" name="presa" id="Scarso" value="1" data-text="Scarso"> Scarso
+                    <div>
+                        <input type="radio" name="presa" id="Buono" value="0" data-text="buono" checked>
+                        <label for="Buono">Buono</label>
+                    </div>
+                    <div>
+                        <input type="radio" name="presa" id="Scarso" value="1" data-text="scarso">
+                        <label for="Scarso">Scarso</label>
+                    </div>
                 </td>
             </tr>
             <tr>
@@ -111,9 +135,18 @@
             <tr>
                 <td><label for="durata">Durata</label></td>
                 <td>
-                    <input type="radio" name="durata" value="0" data-text="CONTINUO ( 1ora )" checked> CONTINUO ( 1ora )
-                    <input type="radio" name="durata" value="1" data-text="CONTINUO ( 1-2 ore)"> CONTINUO ( 1-2 ore)
-                    <input type="radio" name="durata" value="2" data-text="CONTINUO ( 2-8 ore)"> CONTINUO ( 2-8 ore)
+                    <div>
+                        <input type="radio" name="durata" value="0" data-text="CONTINUO ( 1ora )" id="1h" checked>
+                        <label for="1h">CONTINUO ( 1ora )</label>
+                    </div>
+                    <div>
+                        <input type="radio" name="durata" value="1" data-text="CONTINUO ( 1-2 ore)" id="2h">
+                        <label for="2h">CONTINUO ( 1-2 ore)</label>
+                    </div>
+                    <div>
+                        <input type="radio" name="durata" value="2" data-text="CONTINUO ( 2-8 ore)" id="8h">
+                        <label for="8h">CONTINUO ( 2-8 ore)</label>
+                    </div>
                 </td>
             </tr>
             <tr>
@@ -123,10 +156,11 @@
                 </td>
             </tr>
         </table>
-        <input type="button" value="Calcola" onclick="calcola()">
+        <br>
+        <input type="button" value="CALCOLA" onclick="calcola()">
     </form>
 
-    <h2>Risultato</h2>
+    <h2>Indice di rischio:</h2>
     <p id="risultato"></p>
     
     <button type="button" value="pdf" onclick="createPdf()" disabled="true" id="pdf">Crea PDF</button>

@@ -35,27 +35,33 @@ form {
 
 /* Stile per la tabella */
 table {
-    width: 100%;
+    width: 50%;
     border-collapse: collapse;
     border: 1px solid #ddd;
+    margin: 0 auto;
+    border-width: 2px;
+    border-color: #7EA8F8;
+    border-style: solid;
+
 }
 
 /* Stile per le celle dell'intestazione della tabella */
 th {
-    background-color: #f2f2f2;
-    border: 1px solid #ddd;
+    background-color: #b8cef6;
+    border-width: 2px;
+    border-color: #7EA8F8;
+    border-style: solid;
     padding: 10px;
 }
 
 /* Stile per le celle della tabella */
 td {
-    border: 1px solid #ddd;
+    background-color: #e9eff8;
+    border-width: 2px;
+    border-color: #7EA8F8;
+    border-style: solid;
     padding: 10px;
-}
-
-/* Stile per i radio button */
-input[type="radio"] {
-    margin-right: 5px;
+    width: 50%;
 }
 
 /* Stile per i select */
@@ -70,23 +76,29 @@ select {
 
 /* Stile per i pulsanti */
 input[type="button"] {
-    padding: 10px 20px;
-    background-color: #007bff;
+    border-radius: 6px;
+    padding: 15px 35px;
+    background-color: #377dfd;
     color: #fff;
     border: none;
     cursor: pointer;
+    font-size: 16px;
+    display: block;
+    margin: 0 auto;
+    margin-top: 20px;
 }
 
 input[type="button"]:hover {
-    background-color: #0056b3;
+    background-color: #306bd8;
 }
 
 /* Stile per il risultato */
 #risultato {
-    font-size: 18px;
+    font-size: 25px;
     color: #333;
     margin-top: 20px;
     text-align: center;
+    font-weight: bold;
 }
 
 /* Stile per il footer */
@@ -94,5 +106,68 @@ footer {
     text-align: center;
     margin-top: 20px;
     color: #666;
+}
+
+/* Stile per il pdf */
+#pdf {
+    background-color: #fd4e37;
+    color: rgb(0, 0, 0);
+    border: solid;
+    padding: 5px 10px;
+    font-weight: bold;
+    border-color: rgb(0, 0, 0);
+    border-width: 2.5px;
+    cursor: pointer;
+    font-size: 16px;
+    display: block;
+    margin-top: 10px;
+}
+
+/* Stile per il pdf disabilitato */
+#pdf:disabled {
+    background-color: #dc5f4c;
+    color: rgb(62, 62, 62);
+    border: solid;
+    padding: 5px 10px;
+    font-weight: bold;
+    border-color: rgb(62, 62, 62);
+    border-width: 2.5px;
+    cursor: not-allowed;
+    font-size: 16px;
+    display: block;
+    margin-top: 10px;
+}
+
+/* Stile per il pdf hover quando è abilitato */
+#pdf:hover:enabled {
+    background-color: #f96459;
+}
+
+/*Stile per ragione sociale*/
+#ragione_sociale {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: #fff;
+    margin-bottom: 10px;
+}
+
+#peso{
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: #fff;
+    margin-bottom: 10px;
+}
+
+/*stile per radio*/
+input[type="radio"] {
+    accent-color: #306bd8;
+    padding: 10px;
+    border-radius: 4px;
+    margin-right: 5px;
+    cursor: pointer;
 }
 

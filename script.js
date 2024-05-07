@@ -36,31 +36,41 @@ function calcola(){
     
     var limite = costante * altezza * dislocazione * distanza * angolo * presa * relazione;
     var risultato = peso/limite;
+    risultato = Math.round(risultato * 100) / 100;
     document.getElementById("risultato").innerHTML = risultato;
     document.getElementById("pdf").disabled = false;
 }
 
 function createPdf() {
-    
     var doc = new jsPDF();
-    doc.text(20, 20, 'Dati del form:');
-    
+
     var formData = new FormData(document.querySelector('form'));
     var data = {};
     for (var [key, value] of formData.entries()) {
         data[key] = value;
     }
-    
+
     var yPos = 30;
+    
+    var ragioneSociale = document.getElementById("ragione_sociale").value;
+    doc.setFontSize(20);
+    doc.setFontStyle("bold");
+    var centerPos = (doc.internal.pageSize.width / 2) - (doc.getStringUnitWidth(ragioneSociale) * doc.internal.getFontSize() / 2);
+    doc.text(centerPos, yPos, ragioneSociale);
+    doc.setFontSize(12);
+    doc.setFontStyle("normal");
+    yPos += 10;
     var i = 0;
     for (var key in data) {
-        if (data.hasOwnProperty(key)) {
-            doc.text(20, yPos, key + ': ' + valori[i++]);
+        if (data.hasOwnProperty(key) && key !== "ragione_sociale") {
+            doc.text(20, yPos, key + ': ' +valori[i++]);
             yPos += 10;
         }
     }
-    doc.text(20, yPos, 'Indice di Rischio: ' + valori[i++]);
-    
+
+    var risultato = document.getElementById("risultato").innerHTML;
+    doc.text(20, yPos, 'Indice di Rischio: ' + risultato);
 
     doc.save('risultato.pdf');
 }
+
